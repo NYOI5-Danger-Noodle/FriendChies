@@ -20,6 +20,9 @@ export default function LoginPage() {
     return (
         <div>
             <h1>Log In </h1>
+            <p className="git-login-button">
+                <a class="button" href="/api/auth">Sign In With GitHub</a>
+            </p>
             <label>Username</label>
             <input id="username" value={loginUserVal} onChange={(e) => setLoginUserVal(e.target.value)}/>
             <label>Password</label>
