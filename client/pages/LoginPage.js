@@ -8,12 +8,14 @@ export default function LoginPage() {
     const [loginPassVal, setLoginPassVal] = useState("");
 
     async function login() {
-        console.log("loginUserVal:", loginUserVal)
+        console.log(loginUserVal,loginPassVal )
         // '/api/user/login' functionality not yet written 
-        const response = await axois.get('/api/user/login', {
+        const response = await axois.post('/api/user/login', {
             username: loginUserVal,
             password: loginPassVal
         })
+        //gotta figure out how to get res.locals here
+        //will use the login boolean to determine redirection or not
         console.log("login:", response)
     };
     

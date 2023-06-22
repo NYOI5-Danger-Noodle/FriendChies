@@ -30,6 +30,7 @@ router.get('/dogs', controller.getPotentialMatches, (req, res) => {
 });
 // should above be spread..? C
 
+<<<<<<< Updated upstream
 // include app.get request for /auth route - LGJ
 router.get('/auth', (req, res) => {
   res.redirect(
@@ -73,8 +74,10 @@ app.get('/oauth-callback', async ({ query: { code } }, res) => {
   return res.redirect('http://localhost:8080/swipe');
 });
 
+=======
+>>>>>>> Stashed changes
 app.get('/*', (req, res) => {
-  return res.status(200).sendFile(path.resolve(__dirname, '../index.html'));
+    res.status(200).sendFile(path.resolve(__dirname, '../index.html'));
 });
 
 app.use((err, req, res, next) => {
