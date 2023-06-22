@@ -10,10 +10,15 @@ export default function LoginPage() {
     async function login() {
         console.log(loginUserVal,loginPassVal )
         // '/api/user/login' functionality not yet written 
-        const response = await axois.post('/api/user/login', {
-            username: loginUserVal,
-            password: loginPassVal
+        const response = await fetch('/api/user/login',{
+            method: 'POST',
+            headers: {'content-type': 'application/json'},
+            body : JSON.stringify({username: loginUserVal, password: loginPassVal}) ,
         })
+        // const response = await axois.post('/api/user/login', {
+        //     username: loginUserVal,
+        //     password: loginPassVal
+        // })
         //gotta figure out how to get res.locals here
         //will use the login boolean to determine redirection or not
         console.log("login:", response)

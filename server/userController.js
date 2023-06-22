@@ -1,7 +1,6 @@
 const { redirect } = require('react-router-dom');
 const db = require('./dbModel');
 const bcrypt = require ( 'bcrypt' )
-
 const userController = {};
 
 userController.createUser = async (req, res, next) => {
@@ -59,13 +58,11 @@ userController.loginUser = async (req, res, next) =>{
     const pwQuery = `SELECT password FROM login WHERE username= '${username}'`
     const pw = await db.query(pwQuery);
     console.log('this is pw:', pw.rows);
-   //TODO: if pw.rows is empty, this means the db didn't find anyone with that username. Handle request accordingly here
-   //Later on you try to access pw.rows[0].password is where you get the errors because pw.rows[0] is undefined
     
     //compare the password with its hashed version
     if(pw.rows.length > 0){
       // console.log(pw.rows[0].password)
-      bcrypt.compare(`${password}`,`${pw.rows[0].password}`, function(err,result){
+      await bcrypt.compare(`${password}`,`${pw.rows[0].password}`, function(err,result){
         if(err){
           console.log('IN BCRYPT COMPARE ERR')
           return next()
@@ -73,29 +70,29 @@ userController.loginUser = async (req, res, next) =>{
         else if(result == true){
           console.log('PW CHECK IS RIGHT')
           res.locals.login = true
+          return next()
         }
         else if(result == false){
           console.log('PW CHECK IS WRONG')
           res.locals.login = false
-          
+          return next()
         }
       })
-
     }
-    return next()
   }
   catch (err) {
     return next({log : `Error in loginUser Middleware: ${err}` });
   }
 }
-userController.verifyAuth = async (req, res, next)=>{
-  console.log(res.locals.login)
+
+userController.verifyAuth = (req, res, next)=>{
+  console.log('IS LOGIN NOT NULL? : ', res.locals.login)
   if(res.locals.login === true){
     console.log('RES LOGIN WAS TRUE')
-    return res.redirect ('/swipe')
+    return res.redirect ('http://localhost:8080/swipe')
   }else{
     console.log('RES LOGIN WAS FALSE')
-    return res.redirect('login')
+    return res.sendstatus(200)
   }
   return next()
 }
