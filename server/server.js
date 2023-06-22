@@ -74,7 +74,7 @@ app.get('/oauth-callback', async ({ query: { code } }, res) => {
 });
 
 app.get('/*', (req, res) => {
-  return res.status(200).sendFile(path.resolve(__dirname, '../index.html'));
+    res.status(200).sendFile(path.resolve(__dirname, '../index.html'));
 });
 
 app.use((err, req, res, next) => {
