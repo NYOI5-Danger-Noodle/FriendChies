@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import axois from 'axios';
 import { redirect } from 'react-router-dom';
-
 
 export default function LoginPage() {
     const [loginUserVal, setLoginUserVal] = useState("");
@@ -35,16 +34,27 @@ export default function LoginPage() {
     };
     
     return (
-        <div>
-            <h1>Log In </h1>
-            <p className="git-login-button">
-                <a class="button" href="/api/auth">Sign In With GitHub</a>
-            </p>
-            <label>Username</label>
-            <input id="username" value={loginUserVal} onChange={(e) => setLoginUserVal(e.target.value)}/>
-            <label>Password</label>
-            <input value ={loginPassVal}  onChange={(e) => setLoginPassVal(e.target.value)} />
-            <button id="login-button" onClick={login}>Log In</button>
-        </div>
-    )
+    <div className="login-page">
+      <h1>Log In </h1>
+        <button className='git-login-button'>
+          <a class='button' href='/api/auth'>
+            Sign In With GitHub
+          </a>
+        </button>
+      <label>Username</label>
+      <input
+        id='username'
+        value={loginUserVal}
+        onChange={(e) => setLoginUserVal(e.target.value)}
+      />
+      <label>Password</label>
+      <input
+        value={loginPassVal}
+        onChange={(e) => setLoginPassVal(e.target.value)}
+      />
+      <button id='login-button' onClick={login}>
+        Log In
+      </button>
+    </div>
+  );
 }
