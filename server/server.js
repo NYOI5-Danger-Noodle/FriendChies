@@ -70,7 +70,7 @@ app.get('/oauth-callback', async ({ query: { code } }, res) => {
 
   // app.use((req, res) => res.status(404).send('This is not the page you\'re looking for...'));
 
-  return res.sendStatus(200);
+  return res.redirect('http://localhost:8080/swipe');
 });
 
 app.get('/*', (req, res) => {
