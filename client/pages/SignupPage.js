@@ -16,20 +16,20 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="signup-page">
+    <div className='signup-page'>
       <h1>Sign Up</h1>
-        <button className='git-login-button'>
-          <a className='button' href='/api/auth'>
-            Create Profile With GitHub
-          </a>
-        </button>
-      <label htmlFor='username'>Username</label>
+      <button className='git-login-button'>
+        <a className='button' href='/api/auth'>
+          Create Profile With GitHub
+        </a>
+      </button>
+      <label className='user-fields'>Username:</label>
       <input
         id='username'
         value={userVal}
         onChange={(e) => setUserVal(e.target.value)}
       />
-      <label htmlFor='password'>Password</label>
+      <label className='user-fields'>Password:</label>
       <input
         type='password'
         value={passVal}

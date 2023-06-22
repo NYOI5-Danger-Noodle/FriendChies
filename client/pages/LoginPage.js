@@ -41,13 +41,13 @@ export default function LoginPage() {
             Sign In With GitHub
           </a>
         </button>
-      <label>Username</label>
+      <label className="user-fields">Username:</label>
       <input
         id='username'
         value={loginUserVal}
         onChange={(e) => setLoginUserVal(e.target.value)}
       />
-      <label>Password</label>
+      <label className="user-fields">Password:</label>
       <input
         value={loginPassVal}
         onChange={(e) => setLoginPassVal(e.target.value)}

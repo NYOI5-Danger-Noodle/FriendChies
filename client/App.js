@@ -8,7 +8,7 @@ export default function App() {
       <h1>FriendChies</h1>
       <button className='to-login-button'>
         <a class='button' href='/login'>
-          Take Me to the Login Page!
+          Come on in!
         </a>
       </button>
     </div>
