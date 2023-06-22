@@ -24,7 +24,7 @@ export default function MatchPage() {
   }, []);
 
   return (
-    <div>
+    <div className="match-page">
       <h2>Match Page</h2>
       {dogs.map((doggos, index) => (
         <MatchCard

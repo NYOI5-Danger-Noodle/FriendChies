@@ -18,7 +18,7 @@ export default function MatchCard(props) {
     alert('Removed from Matches!');
   }
   return (
-    <div>
+    <div className="card">
       <img />
       <h3>{name}</h3>
       <ul class='removeBullets'>

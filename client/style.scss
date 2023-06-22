@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+body{
+  background-color: rgba(251, 255, 0, 0.372);
+  font-family: 'Comfortaa', cursive;
+
+}
+
+.removeBullets {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.button{
+  text-decoration: none;
+  
+}
+
+.homepage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.match-page{
+
+}
+
+.swipe-page{
+
+}
+
+.card{
+
+}
+
+// things to add:
+  // background color for all pages
+  // button styling
+  // fonts
+  // centering
