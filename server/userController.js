@@ -70,11 +70,13 @@ userController.loginUser = async (req, res, next) =>{
         else if(result == true){
           console.log('PW CHECK IS RIGHT')
           res.locals.login = true
+          console.log('RES LOGIN CHECK', res.locals.login)
           return next()
         }
         else if(result == false){
           console.log('PW CHECK IS WRONG')
           res.locals.login = false
+          console.log('RES LOGIN CHECK', res.locals.login)
           return next()
         }
       })
@@ -85,16 +87,16 @@ userController.loginUser = async (req, res, next) =>{
   }
 }
 
-userController.verifyAuth = (req, res, next)=>{
-  console.log('IS LOGIN NOT NULL? : ', res.locals.login)
-  if(res.locals.login === true){
-    console.log('RES LOGIN WAS TRUE')
-    return res.redirect ('http://localhost:8080/swipe')
-  }else{
-    console.log('RES LOGIN WAS FALSE')
-    return res.sendstatus(200)
-  }
-  return next()
-}
+// userController.verifyAuth = (req, res, next)=>{
+//   console.log('IS LOGIN NOT NULL? : ', res.locals.login)
+//   if(res.locals.login === true){
+//     console.log('RES LOGIN WAS TRUE')
+//     return res.redirect ('http://localhost:8080/swipe')
+//   }else{
+//     console.log('RES LOGIN WAS FALSE')
+//     return res.sendstatus(200)
+//   }
+//   return next()
+// }
 
 module.exports = userController;

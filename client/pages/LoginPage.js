@@ -1,27 +1,37 @@
 import React, {useState} from 'react';
 import axois from 'axios';
+import { redirect } from 'react-router-dom';
 
 
 export default function LoginPage() {
-    
     const [loginUserVal, setLoginUserVal] = useState("");
     const [loginPassVal, setLoginPassVal] = useState("");
 
-    async function login() {
-        console.log(loginUserVal,loginPassVal )
+    const rejected = '/login'
+    const accepted = 'swipe'
+    let result;
+
+    function login() {
+        console.log("loginPage vals: ", loginUserVal,loginPassVal )
         // '/api/user/login' functionality not yet written 
-        const response = await fetch('/api/user/login',{
+        fetch('/api/user/login',{
             method: 'POST',
             headers: {'content-type': 'application/json'},
             body : JSON.stringify({username: loginUserVal, password: loginPassVal}) ,
         })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .then(data => result=data)
+        // console.log(allowed)
+       
+            
         // const response = await axois.post('/api/user/login', {
         //     username: loginUserVal,
         //     password: loginPassVal
         // })
         //gotta figure out how to get res.locals here
         //will use the login boolean to determine redirection or not
-        console.log("login:", response)
+        // console.log("What is sent back to loginPage: ", response)
     };
     
     return (
