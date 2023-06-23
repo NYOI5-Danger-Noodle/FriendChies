@@ -32,42 +32,42 @@ export default function SwipeCard(props) {
       <ul className="removeBullets">
         <li>
           <label className="cardLabel" id="breed">
-            <strong>Breed:</strong>
+            <strong>Breed: </strong>
             {dogInf?.breed}
           </label>
         </li>
 
         <li>
           <label className="cardLabel" id="age">
-            <strong>Age:</strong>
+            <strong>Age: </strong>
             {dogInf?.age}
           </label>
         </li>
 
         <li>
           <label className="cardLabel" id="size">
-            <strong>Size:</strong>
+            <strong>Size: </strong>
             {dogInf?.size}
           </label>
         </li>
         
         <li>
           <label className="cardLabel" id="breed">
-            <strong>Gender:</strong>
+            <strong>Gender: </strong>
             {dogInf?.gender}
           </label>
         </li>
 
         <li>
           <label className="cardLabel" id="owner">
-            <strong>Owner:</strong>
+            <strong>Owner: </strong>
             {dogInf?.owner}
           </label>
         </li>
 
         <li>
           <label className="cardLabel" id="zip">
-            <strong>Zip:</strong>
+            <strong>Zip: </strong>
             {dogInf?.zip}
           </label>
         </li>

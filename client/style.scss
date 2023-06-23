@@ -3,10 +3,19 @@
 body{
   background-color: rgba(251, 255, 0, 0.372);
   font-family: 'Comfortaa', cursive;
-
+  background-image: url('https://as1.ftcdn.net/v2/jpg/03/81/63/52/1000_F_381635280_Q2VjB89QDoZvJPwWqWSHD3280Ic2vQmC.jpg');
+  color : white
 }
 h1{
   font-size: 75px;
+  background-color: black;
+}
+
+h3{
+  background-color: black;
+  text-align: center;
+  width: 50%
+
 }
 
 .removeBullets {
@@ -25,6 +34,7 @@ h1{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 
 .to-login-button {
@@ -39,6 +49,7 @@ h1{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 
 #login-button{
@@ -67,9 +78,12 @@ h1{
 
 .user-fields{
   display: block;
-  width: 15%;
+  width: 25%;
   font-size: 25px;
   padding: 14px 28px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background-color: black;
 }
 
 .signup-page{
@@ -95,10 +109,13 @@ h1{
 }
 
 .cardLabel{
+  display:flex;
   font-size: 25px;
   margin-top: 20px;
   margin-bottom: 20px;
-  padding: 10px;
+  // padding: 10px;
+  background-color: black;
+  text-align: center;
 }
 
 

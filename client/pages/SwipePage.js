@@ -44,7 +44,7 @@ export default function SwipePage() {
   else {
   return (
     <div className="swipe-page">
-      <h3>Swipe Page</h3>
+      <h3>Dogs In Your Area</h3>
       {/* prop drill an individual dog, and method to change the index C */}
       <SwipeCard dogArray={swipeDogs} index={i} changeSwipeDog={changeSwipeDog} />
     </div>
